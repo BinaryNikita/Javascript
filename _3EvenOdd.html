@@ -13,15 +13,19 @@
     <script >
 
 function checkEvenOrOdd(){
-            const number = document.getElementById('numberInput').value;
+            const userInput = document.getElementById('numberInput').value;
+            const number =userInput;
             const resultDiv = document.getElementById('result');
-
-if(number%2 == 0){
+if(isNaN(number) || number < 0){
+resultDiv.textContent = "Please enter a valid number!";
+resultDiv.style.color = "red";
+}
+else if(number%2 == 0){
 resultDiv.textContent = "It's a even number";
-resultDiv.style.color = orange; 
+resultDiv.style.color = "orange"; 
 } else {
     resultDiv.textContent = "It's a odd number";
-resultDiv.style.color = green; 
+resultDiv.style.color = "green"; 
 }
         }
     </script>
