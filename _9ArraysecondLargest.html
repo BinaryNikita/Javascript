@@ -6,6 +6,35 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Find second largest in a list of numbers..</h1>
+    <p>Enter a list of numbers comma seperated like 1, 2, 3, 4</p>
+    <input type="text" id="userInput" placeholder="Enter numbers">
+    <button onclick="secondLargest()">Find</button>
+    <div id="result"></div>
+    <script>
+       function secondLargest(){
+        const input = document.getElementById("userInput").value;
+        const arr = input.split(',').map(Number);
+
+        
+        for(let i = 0; i < arr.length; i++){
+            
+            for(let j = i+1; j < arr.length; j++)
+            if(arr[i] < arr[j]){
+                let temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
     
+
+        
+
+
+        document.getElementById("result").textContent = "The second largest number among: " + arr + " is: " + arr[1];
+
+
+       }
+    </script>
 </body>
 </html>
