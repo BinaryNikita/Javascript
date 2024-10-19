@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Vowels and Consonents Counter</h1>
+
+    <input type="text" id="wordInput" placeholder="Enter a word..">
+    <button onclick="countVowelsAndConsonants()">Count</button>
+    <div id="result"></div>
+    <script>
+
+        function countVowelsAndConsonants(){
+        const word = document.getElementById("wordInput").value;
+        let Vowels = "aAeEiIoOuU";
+ 
+        let vowelsCount = 0;
+        let consonantCount = 0;
+        for (let i = 0; i < word.length; i++) {
+        if (Vowels.indexOf(word[i]) !== -1) {
+            vowelsCount += 1;
+        } else {
+            consonantCount += 0;
+        }
+    }
+
+    resultDiv = documet.getElementById("result");
+    resultDiv.textContent = "Vowels are: " + vowelsCount + " Consonants are: " + consonantCount;
+
+    }
+    </script>
+</body>
+</html>
