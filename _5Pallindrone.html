@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Pallindrone Checker</h1>
+    <p>
+      A palindrome is a word, sentence, verse, or even number that reads the
+      same backward or forward. e.g kayak, deified, rotator, repaper, deed
+    </p>
+    <input type="text" id="wordInput" placeholder="Enter a word..." />
+    <button onclick="pallindroneChecker()">Check</button>
+    <div id="result"></div>
+
+    <script>
+      function pallindroneChecker() {
+        const word = document.getElementById("wordInput").value;
+        const reverseWord = word.split("").reverse().join("");
+        const resultDiv = document.getElementById("result");
+        if (word == reverseWord) {
+          resultDiv.style.color = "Green";
+          resultDiv.textContent = "Yes, its a pallindrone";
+        } else {
+          resultDiv.style.color = "Red";
+          resultDiv.textContent = "No, its not a pallindrone";
+        }
+      }
+    </script>
+  </body>
+</html>
