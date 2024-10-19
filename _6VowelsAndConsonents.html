@@ -23,12 +23,12 @@
         if (Vowels.indexOf(word[i]) !== -1) {
             vowelsCount += 1;
         } else {
-            consonantCount += 0;
+            consonantCount += 1;
         }
     }
 
-    resultDiv = documet.getElementById("result");
-    resultDiv.textContent = "Vowels are: " + vowelsCount + " Consonants are: " + consonantCount;
+    const resultDiv = document.getElementById("result");
+    resultDiv.textContent = "Total Vowels are: " + vowelsCount + " Total Consonants are: " + consonantCount;
 
     }
     </script>
