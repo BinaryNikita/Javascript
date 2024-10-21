@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Enter a range to generate fibonacci e.g 9</h1>
+    <input type="number" id="number" placeholder="Enter a number.." />
+    <button onclick="fibonacciSequence()">Find</button>
+    <div id="result"></div>
+    <script>
+      function fibonacci(n) {
+        if (n <= 1) {
+          return n;
+        }
+        return fibonacci(n - 1) + fibonacci(n - 2);
+      }
+
+      function fibonacciSequence() {
+        let sequence = [];
+        const userInput = document.getElementById("number").value;
+
+        for (let i = 0; i < userInput; i++) {
+          sequence.push(fibonacci(i));
+        }
+
+        document.getElementById("result").textContent = sequence.join('  ');
+      }
+    </script>
+  </body>
+</html>
