@@ -1,8 +1,18 @@
 function todo(){
     let task = [];
 
-    function add(newTask){
-        task.push(newTask.toLowerCase());
+    function add(){
+        const newTask = document.getElementById("taskInput").value;
+        let len = task.length;
+        task.push(newTask.toLowerCase())
+        if(task.length > len){
+            document.getElementById("added").style.color = "green";
+            document.getElementById("added").textContent = prompt("Task added successfully.");
+        } else{
+            document.getElementById("added").style.color = "red";
+            document.getElementById("added").textContent = prompt("Some error occured while); deleting. "
+        }
+
     }
 
     function deleteTask(taskName){
@@ -15,8 +25,13 @@ function todo(){
     }
 
     function showAll(){
-        for(let a of task){
-console.log(a);
+        document.getElementById("taskList").innerHTML = "";
+
+    for(let a of task){
+        const taskElement = document.createElement("li");
+        taskElement.textContent = a;
+        document.getElementById("taskList").appendChild(taskElement);
+
         }
     }
 
@@ -26,9 +41,4 @@ console.log(a);
         showAll: showAll
     };
 }
-let todolist = todo();
-todolist.add("Eat");
-todolist.add("Sleep");
-todolist.add("WALK");
-todolist.deleteTask("Eat");
-todolist.showAll();
+const myTodo = todo();
