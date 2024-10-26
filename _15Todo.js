@@ -6,21 +6,20 @@ function todo(){
         let len = task.length;
         task.push(newTask.toLowerCase())
         if(task.length > len){
-            document.getElementById("added").style.color = "green";
-            document.getElementById("added").textContent = prompt("Task added successfully.");
+            document.getElementById("added").textContent = alert("Task added successfully.");
         } else{
-            document.getElementById("added").style.color = "red";
-            document.getElementById("added").textContent = prompt("Some error occured while); deleting. "
+            document.getElementById("added").textContent = alert("Some error occured while deleting. "); 
         }
-
     }
 
-    function deleteTask(taskName){
+    function deleteTask(){
+        const taskName = document.getElementById("deleteTaskInput").value;
         let index = task.indexOf(taskName.toLowerCase());  
         if (index !== -1) {
             task.splice(index, 1); 
+            alert(taskName + " deleted succussfully.")
         } else {
-            console.log(taskName + " does not exist")
+            alert(taskName + " does not exist")
         }
     }
 

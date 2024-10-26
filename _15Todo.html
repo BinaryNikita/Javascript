@@ -6,85 +6,143 @@
     <title>To-Do List</title>
     <style>
         * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-.container {
-    background-color: #fff;
-    width: 400px;
-    padding: 20px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
+        .container {
+            background-color: #fff;
+            width: 400px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
 
-.title {
-    font-size: 2em;
-    color: #333;
-    text-align: center;
-    margin-bottom: 20px;
-}
+        .title {
+            font-size: 2em;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
 
-.input-container {
-    display: flex;
-    margin-bottom: 20px;
-}
+        .input-container {
+            display: flex;
+            margin-bottom: 15px;
+        }
 
-#taskInput {
-    width: 75%;
-    padding: 10px;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-}
+        #taskInput {
+            width: 75%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
 
-#addTaskBtn {
-    width: 25%;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-left: 10px;
-    display: block;
-}
+        #taskInput:focus {
+            border-color: #007bff;
+            outline: none;
+        }
 
-#addTaskBtn:hover {
-    background-color: #218838;
-}
+        #addTaskBtn, .delete-btn {
+            width: 25%;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
 
-.task-list {
-    list-style-type: none;
-    padding: 0;
-}
+        #addTaskBtn:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
 
-.task-list li {
-    background-color: #f8f9fa;
-    margin: 10px 0;
-    padding: 15px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-left: 5px solid #007bff;
-}
+        .delete-btn {
+            background-color: #dc3545;
+        }
 
-.task-list li button {
-    background-color: #dc3545;
-    border: none; }
+        .delete-btn:hover {
+            background-color: #c82333;
+            transform: scale(1.05);
+        }
 
+        .task-list {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        .task-list li {
+            background-color: #f8f9fa;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 5px solid #007bff;
+            transition: background-color 0.3s;
+        }
+
+        .task-list li:hover {
+            background-color: #e9ecef;
+        }
+
+        .task-list li button {
+            background-color: #dc3545;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .task-list li button:hover {
+            background-color: #c82333;
+            transform: scale(1.05);
+        }
+
+        .additional-inputs {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .additional-inputs input {
+            width: 70%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .additional-inputs input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .additional-inputs button {
+            width: 25%;
+        }
     </style>
 </head>
 <body>
@@ -92,10 +150,16 @@ body {
         <h1 class="title">My To-Do List</h1>
         <div class="input-container">
             <input type="text" id="taskInput" placeholder="Enter a task...">
-            <button id="addTaskBtn" onclick="myTodo.add()" >Add Task</button>
-            <p id="added" ></p>
+            <button id="addTaskBtn" onclick="myTodo.add()">Add Task</button>
+            <p id="added"></p>
         </div>
-        <button onclick="myTodo.showAll()">See all task</button>
+        
+        <div class="additional-inputs">
+            <input id="deleteTaskInput" type="text" placeholder="Task to delete">
+            <button class="delete-btn" onclick="myTodo.deleteTask()">Delete</button>
+        </div>
+        
+        <button id="viewTasksBtn" onclick="myTodo.showAll()" style="width: 100%; margin-top: 10px;">See all tasks</button>
         <ul id="taskList" class="task-list"></ul>
     </div>
 
