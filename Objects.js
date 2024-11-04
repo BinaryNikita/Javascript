@@ -31,3 +31,16 @@ console.log(this);
 
 //this in nested function
 
+let userDetails = {
+    name: "Nikita",
+    greet: function(){
+          const self = this;
+        function sayHello(){
+
+            console.log("Welcome back, " + self.name);
+        }
+        sayHello();
+    }
+}
+
+userDetails.greet()
