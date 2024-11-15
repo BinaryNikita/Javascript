@@ -3,16 +3,14 @@ let newArray = [];
 // arr = Array.from(new Set(arr));
 
 for (let i = 0; i < arr.length; i++) {
-
-    let isPresent = false;
+  let isPresent = false;
   for (let j = i + 1; j < arr.length; j++) {
     if (arr[i] == arr[j]) {
-isPresent = true;
-
+      isPresent = true;
     }
   }
 
-  if(!isPresent){
+  if (!isPresent) {
     newArray.push(arr[i]);
   }
 }

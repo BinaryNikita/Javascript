@@ -1,5 +1,5 @@
 function rotateArray(arr) {
-  // arr.push(arr.shift);
+  // arr.push(arr.shift());
 
   // let temp = arr[0];
   // arr.shift();
@@ -11,7 +11,6 @@ function rotateArray(arr) {
     newArray[j] = arr[i];
   }
   newArray[newArray.length] = arr[0];
-
   console.log(newArray);
 }
 
