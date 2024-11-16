@@ -13,7 +13,6 @@ console.log(arr2[i]);
 
 
 let a1 = "[1, 2, 3, 4]"; // [1, 2, 3, 4]/"[1, 2, 3, 4]" works for both
-
 let a2 = JSON.parse(JSON.stringify(a1));
 console.log(a1);
 
