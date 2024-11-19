@@ -5,6 +5,7 @@ const matrix = [
   ];
   
   const n = matrix.length;
+
   
   console.log("Lower triangular elements:");
   for (let i = 0; i < n; i++) {

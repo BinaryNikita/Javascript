@@ -14,6 +14,11 @@ const matrix = [
   
   console.log("Secondary:");
   for (let i = 0; i < n; i++) {
-    console.log(matrix[i][n - 1 - i]);
+    // console.log(matrix[i][n - 1 - i]);
+    for (let j = 0; j < n; j++) {
+        if(i+j == 2)
+    console.log(matrix[i][j]);
+
   }
+}
   

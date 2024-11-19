@@ -1,7 +1,7 @@
 let matrix = [
-  [3, 2, 1],
-  [9, 8, 7],
-  [6, 5, 4],
+  [3, 5, 1],
+  [9, 10, 7],
+  [6, 1, 4],
 ];
 
 function bubbleSort(arr) {
@@ -15,6 +15,8 @@ function bubbleSort(arr) {
     }
   }
 }
+
+// bubbleSort(matrix);
 
 for (let i = 0; i < matrix.length; i++) {
     bubbleSort(matrix[i]);
