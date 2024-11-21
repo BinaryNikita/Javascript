@@ -1,8 +1,5 @@
 /* 
 WAP to print Fibonacci series.
-find the row with maximum sum in 2-D array.
-Print the diagonal element of 2-D array.
-Reverse each row of 2-D array.
 
 */
 
