@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "is-even": "^1.0.0",
     "mysql2": "^3.11.4"
   }
 }
