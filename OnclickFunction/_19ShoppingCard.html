@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+</head>
+<body>
+    <div id="cartApp"></div>
+
+    <script>
+        class ShoppingCart {
+            constructor() {
+                this.items = {};
+                this.renderCart();
+            }
+
+            // Method to add an item to the cart
+            addItem(name, price, quantity = 1) {
+                if (this.items[name]) {
+                    this.items[name].quantity += quantity;
+                } else {
+                    this.items[name] = { price: price, quantity: quantity };
+                }
+                this.renderCart();
+            }
+
+            // Method to remove an item from the cart
+            removeItem(name, quantity = 1) {
+                if (this.items[name]) {
+                    this.items[name].quantity -= quantity;
+                    if (this.items[name].quantity <= 0) {
+                        delete this.items[name];
+                    }
+                } else {
+                    alert(`${name} is not in the cart.`);
+                }
+                this.renderCart();
+            }
+
+            // Method to calculate the total cost of items in the cart
+            calculateTotal() {
+                let total = 0;
+                for (let item in this.items) {
+                    total += this.items[item].price * this.items[item].quantity;
+                }
+                return total;
+            }
+
+            // Method to render the cart UI
+            renderCart() {
+                const cartDiv = document.getElementById('cartApp');
+                cartDiv.innerHTML = `
+                    <h2>Shopping Cart</h2>
+                    <div>
+                        <label>Item Name: <input type="text" id="itemName"></label>
+                        <label>Price: <input type="number" id="itemPrice" step="0.01"></label>
+                        <label>Quantity: <input type="number" id="itemQuantity" value="1"></label>
+                        <button onclick="cart.addItemFromInput()">Add Item</button>
+                    </div>
+                    <h3>Items in Cart:</h3>
+                    <ul id="cartItems">
+                        ${Object.keys(this.items).map(item => `
+                            <li>
+                                ${item} - $${this.items[item].price} x ${this.items[item].quantity} 
+                                <button onclick="cart.removeItem('${item}', 1)">Remove One</button>
+                                <button onclick="cart.removeItem('${item}', ${this.items[item].quantity})">Remove All</button>
+                            </li>
+                        `).join('')}
+                    </ul>
+                    <p>Total Cost: $${this.calculateTotal().toFixed(2)}</p>
+                `;
+            }
+
+            // Method to handle adding an item from input fields
+            addItemFromInput() {
+                const name = document.getElementById('itemName').value;
+                const price = parseFloat(document.getElementById('itemPrice').value);
+                const quantity = parseInt(document.getElementById('itemQuantity').value);
+
+                if (name && price > 0 && quantity > 0) {
+                    this.addItem(name, price, quantity);
+                    document.getElementById('itemName').value = '';
+                    document.getElementById('itemPrice').value = '';
+                    document.getElementById('itemQuantity').value = '1';
+                } else {
+                    alert('Please enter valid item details.');
+                }
+            }
+        }
+
+        // Initialize a new ShoppingCart instance
+        const cart = new ShoppingCart();
+    </script>
+</body>
+</html>

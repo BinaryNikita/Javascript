@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Write a function that takes a number and returns a new number formed by rearranging its digits in ascending order. -->
+    <h1>Enter a number to generate a new one { Ex:89216 }</h1>
+    <input type="number" id="numberInput" placeholder="Enter a number.." />
+    <button onclick="newNumberGenerator()">Find</button>
+    <p id="result"></p>
+
+    <script>
+      function newNumberGenerator() {
+        const numberInput = document.getElementById("numberInput").value;
+        let newNumber = numberInput.split("").map(Number);
+
+        for (let i = 0; i < newNumber.length; i++) {
+          for (let j = i + 1; j < newNumber.length; j++) {
+            if (newNumber[i] > newNumber[j]) {
+              let temp = newNumber[i];
+              newNumber[i] = newNumber[j];
+              newNumber[j] = temp;
+            }
+          }
+
+          document.getElementById("result").textContent = newNumber.join("");
+        }
+      }
+    </script>
+  </body>
+</html>

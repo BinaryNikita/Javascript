@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+
+        body{
+            background-color: black;
+            color: white;
+            margin:0;
+            padding: 0;
+        }
+        .calculator{
+            margin: 0 auto;
+            background-color: rgba(95, 90, 90, 0.312);
+            width: 300px;
+            padding:20px;
+            margin-top: 15%;
+            border-radius: 20px;
+
+        }
+
+        
+    </style>
+  </head>
+  <body>
+    <div class="calculator">
+      <h2>Mini Calculator</h2>
+      <label for="num1">Enter first number:</label><br />
+      <input type="number" id="num1" placeholder="First Number" /><br /><br />
+
+      <label for="operator">Select Operation:</label><br />
+      <select name="" id="operator">
+        <option value="+">Addition (+)</option>
+        <option value="-">Subtraction (-)</option>
+        <option value="*">Multiplication (*)</option>
+        <option value="/">Division (/)</option>
+        <option value="%">Modulus (%)</option>
+      </select>
+      <br /><br />
+
+      <label for="num2">Enter second number:</label><br />
+      <input type="number" id="num2" placeholder="Second Number" /><br />
+
+      <br><button onclick="calculate()">Calculate</button>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      function calculate() {
+        const num1 = parseInt (document.getElementById("num1").value);
+        const num2 = parseInt (document.getElementById("num2").value);
+        const operator = document.getElementById("operator").value;
+        let result;
+
+        switch (operator) {
+          case "-":
+            result = num1 - num2;
+            break;
+          case "+":
+            result = num1 + num2;
+            break;
+          case "*":
+            result = num1 * num2;
+            break;
+          case "/":
+            if (num2 == 0 || num1 == 0) {
+              result = "Error: cannot divide by zero";
+            } else {
+              result = num1 / num2;
+            }
+            break;
+          case "%":
+            result = num1 % num2;
+            break;
+          default:
+            result = "Invalid choice";
+        }
+
+        const resultDiv = document.getElementById("result");
+        resultDiv.textContent = result;
+      }
+    </script>
+  </body>
+</html>

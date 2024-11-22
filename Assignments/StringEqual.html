@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String Equality Check</title>
+  </head>
+  <body>
+    <h1>Check whether two words are equal</h1>
+    <input id="input1" type="text" placeholder="Word 1" />
+    <input id="input2" type="text" placeholder="Word 2" />
+    <button onclick="stringEquality()">Check</button>
+    <p id="result"></p>
+
+    <script>
+      function stringEquality() {
+        let word1 = document.getElementById("input1").value;
+        let word2 = document.getElementById("input2").value;
+
+        if (word1 == word2) {
+          document.getElementById("result").textContent = "Words are same";
+        } else {
+          document.getElementById("result").textContent = "Words are not same";
+        }
+      }
+    </script>
+  </body>
+</html>

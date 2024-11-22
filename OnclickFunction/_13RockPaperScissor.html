@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            background-color: blanchedalmond;
+        }
+
+        .container{
+            margin: 0 auto;
+            width: 400px;
+            color: white;
+            /* display: inline; */
+            padding: 3%;
+            background-color: rgba(0, 0, 0, 0.594);
+            
+        }
+       
+    </style>
+
+</head>
+<body>
+    <!-- Implement a function that simulates the "Rock, Paper, Scissors" game between the user and the computer. -->
+     <div class="container">
+    <h1>Rock, Paper , Scissors Game</h1>
+    <h4>How to play?</h4>
+    <p> Rock, Paper, Scissors is played like this: at the same time, two players display one of three symbols: a rock, paper, or scissors.</p>
+    <select id="choice">
+    <option value="Rock">Rock</option>
+    <option value="Paper">Paper</option>
+    <option value="Scissors">Scissors</option>
+</select>
+    <button onclick="game()">Play</button>
+<p id="result"></p>
+</div>
+<script>
+    
+function game() {
+const choice = document.getElementById("choice").value;
+const result = document.getElementById("result");
+switch(choice){
+    case "Rock":
+        result.textContent = "Paper";
+        break;
+    case "Paper":
+        result.textContent = "Scissor";
+        break;
+    case "Scissors":
+        result.textContent = "Rock";
+        break;
+    default:
+        result.textContent = "Invalid Choice";
+
+}
+
+
+    // display: inline;
+    //         background-color: rgb(235, 235, 235);
+    //         border: 1px solid black;
+    //         border-radius: 10px;
+    //         padding: 2px 10px;
+    //     }
+
+    result.style.backgroundColor = "rgb(235, 235, 235)";
+    result.style.border = "1px solid black";
+    result.style.borderRadius = "10px";
+    result.style.padding = "2px 10px";
+    result.style.color = "black";
+
+}
+</script>
+
+
+</body>
+</html>

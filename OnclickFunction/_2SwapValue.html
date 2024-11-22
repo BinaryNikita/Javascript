@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Swapping Game</h2>
+    <p>The game is like you will enter your name and surname when you will submit the values name will become surname and surname will become name</p>
+    <input type="text"  id="nameInput" placeholder="Enter your name...">
+    <input type="text"  id="surnameInput" placeholder="Enter you surname...">
+    <button onclick="swapValues()">Swap</button>
+    <div id="result"></div>
+
+    <script>
+        function swapValues(){
+
+         const nameInput = document.getElementById("nameInput");
+         const surnameInput = document.getElementById("surnameInput");
+
+         let temp = nameInput.value;
+         nameInput.value = surnameInput.value;
+         surnameInput.value = temp;
+
+         const resultDiv = document.getElementById("result");
+         resultDiv.textContent = "Your name is: " + nameInput.value + "  Your surname is: " + surnameInput.value;
+
+
+        }
+    </script>
+</body>
+</html>
