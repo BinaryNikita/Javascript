@@ -6,25 +6,25 @@ const comments = {"comments":[{"id":1,"body":"This is some awesome thinking!","p
 
 
 
-// Function to simulate API calls
+
 function simulateApiCalls() {
-  // Simulated API call for comments
+
   const getComments = () =>
     new Promise((resolve) => {
       setTimeout(() => {
         resolve(comments);
-      }, Math.random() * 3000); // Random delay up to 3 seconds
+      }, Math.random() * 3000); 
     });
 
-  // Simulated API call for post
+
   const getPost = () =>
     new Promise((resolve) => {
       setTimeout(() => {
         resolve(post);
-      }, Math.random() * 3000); // Random delay up to 3 seconds
+      }, Math.random() * 3000); 
     });
 
-  // Simulated API call for todo
+
   const getTodo = () =>
     new Promise((resolve) => {
       setTimeout(() => {

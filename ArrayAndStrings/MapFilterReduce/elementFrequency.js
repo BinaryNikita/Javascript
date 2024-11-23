@@ -18,4 +18,26 @@ output:   {
 }
 */
 
+let a = [
+  ['a', 'b', 'c'],
+  ['c', 'd', 'f'],
+  ['d', 'f', 'g'],
+];
 
+let b = a.flat();
+let obj = {};
+
+for (let i = 0; i < b.length; i++) {
+  let count = 1;
+  for (let j = i + 1; j < b.length; j++) {
+    if (b[i] == b[j]) {
+      count++;
+      b[j] = null;
+    }
+  }
+  if (b[i] != null) {
+    obj[b[i]] = count;
+  }
+}
+
+console.log(obj);
