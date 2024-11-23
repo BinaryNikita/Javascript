@@ -14,3 +14,26 @@ output:-
 ]   
   
 */
+
+const students = [
+  { name: 'Alice', scores: [90, 85, 92] },
+  { name: 'Bob', scores: [75, 80, 85] },
+  { name: 'Charlie', scores: [90, 95, 85] },
+  { name: 'David', scores: [100, 100, 100] },
+];
+
+const topStudents = students
+  .filter((student) => {
+    const average =
+      student.scores.reduce((sum, score) => sum + score, 0) /
+      student.scores.length;
+    return average > 90;
+  })
+  .map((student) => ({
+    name: student.name,
+    average:
+      student.scores.reduce((sum, score) => sum + score, 0) /
+      student.scores.length,
+  }));
+
+console.log(topStudents);
