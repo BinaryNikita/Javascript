@@ -33,4 +33,4 @@ Fork, clone, and submit a PR. Contributions are always welcome!
 ---
 
 Happy coding! 🖥️✨  
-> **"They said JavaScript is easy. Then they introduced promises, async/await, and TypeScript." 
+> **"They said JavaScript is easy. Then they introduced promises, async/await, and TypeScript."** 
