@@ -1,6 +1,6 @@
 # JavaScript Learning Hub 🚀
 
-![Coding Illustration](https://blog.omgmog.net/images/2016-10/30/giphy.gif)
+![Coding Illustration](https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F3bauhrfpqexzl59aszn1.png)
 
 Welcome to **JavaScript Learning Hub**! This repository is your go-to resource for mastering JavaScript, from the fundamentals to advanced concepts. Whether you're new to coding or polishing your skills, this repo has something for everyone. 🌟
 
