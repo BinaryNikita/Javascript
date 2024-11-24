@@ -33,4 +33,4 @@ Fork, clone, and submit a PR. Contributions are always welcome!
 ---
 
 Happy coding! 🖥️✨  
-> **"Any fool can write code that a computer can understand. Good programmers write code that humans can understand." – Martin Fowler**
+> **"They said JavaScript is easy. Then they introduced promises, async/await, and TypeScript." 
