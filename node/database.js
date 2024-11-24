@@ -57,6 +57,9 @@ function updateRecord(query) {
 // const sql = 'INSERT INTO employees (first_name, last_name, email, phone_number, job_title, salary, department_id) VALUES (?, ?, ?, ?, ?, ?, ?)';
 // const values = ["Nikita", "Vishnoi", "nikita@gmail.com", "9876543210", "Java Developer", 100000, 2];
 // createUser(sql, values);
+
+
+
 function close(){
   connection.end((err) => {
     if (err) {

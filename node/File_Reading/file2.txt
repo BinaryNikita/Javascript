@@ -1,0 +1,28 @@
+Step 1: What is Node.js?
+Explanation:
+Node.js is a runtime environment that allows you to run JavaScript outside a browser. It uses the V8 engine (Google’s JavaScript engine) to execute code, which makes it fast and efficient.
+
+Think of Node.js as:
+
+A tool to build backend (server-side) applications.
+A way to handle multiple tasks asynchronously without waiting for one to finish.
+Real-World Use Cases:
+Web servers (e.g., powering APIs for Netflix or LinkedIn)
+Real-time applications (e.g., chat apps like WhatsApp Web)
+Command-line tools (e.g., npm CLI)
+
+
+Exercise 1: Checkpoint
+Research and list 5 companies that use Node.js.
+Netflix, NASA, Trello, PayPal, LinkedIn, Walmart, Uber, Twitter, Yahoo, eBay, GoDaddy
+
+Write a short description of why you think Node.js is important in modern web development.
+Let me know when you're ready to continue to Key Features and the rest!
+Node.js is an important tool in modern web development because it offers a variety of benefits, including:
+Speed: Node.js is fast because it uses the V8 engine, which was originally developed for Chrome. 
+Scalability: Node.js is a lightweight technology that's well-suited for microservices architecture. 
+Reduced time to market: Node.js's unified development environment and the ability to use the same language for both frontend and backend development can speed up the development cycle. 
+Reusable components: Node.js offers reusable, ready-to-run components that can save time. 
+Compatibility: Node.js is compatible with various database systems and can handle complex business logic.
+ChatGPT said:
+ChatGPT
