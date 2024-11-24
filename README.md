@@ -1,5 +1,7 @@
 # JavaScript Learning Hub 🚀
 
+![Coding Illustration](https://repository-images.githubusercontent.com/783002380/3e2e0e67-9a6b-47c0-a953-f1fe5b6e7539)
+
 Welcome to **JavaScript Learning Hub**! This repository is your go-to resource for mastering JavaScript, from the fundamentals to advanced concepts. Whether you're new to coding or polishing your skills, this repo has something for everyone. 🌟
 
 ---
