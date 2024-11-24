@@ -19,7 +19,8 @@ Welcome to **JavaScript Learning Hub**! This repository is your go-to resource f
 ---
 
 ## 🤝 Contributing
-Want to make this better? Fork, clone, and submit a PR. Contributions are always welcome! 
+Want to make this better? 
+Fork, clone, and submit a PR. Contributions are always welcome! 
 
 ---
 
