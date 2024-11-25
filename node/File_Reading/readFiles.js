@@ -5,8 +5,7 @@ function logFileContent(filePath) {
     if (err) {
       console.log(err);
     } else {
-      console.log('-----------------------------------------------------');
-      console.log('-----------------------------------------------------');
+
       console.log(data);
     }
   });
