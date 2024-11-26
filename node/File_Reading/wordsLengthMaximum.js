@@ -12,7 +12,7 @@ function logFileContent(filePath) {
             max = a;
         }
       }
-      console.log('Largest ' + max);
+      console.log('Largest word: ' + max);
     }
   });
 }
