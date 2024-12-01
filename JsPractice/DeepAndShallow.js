@@ -1,4 +1,4 @@
-let a = [1, 2, 3, 4, 5];
+let a = [1, 2, 3, [4, 5]];
 let b = [...a];
 b[5] = 6;
 console.log("Original: " + a);
@@ -38,3 +38,12 @@ obj2
 
 
 */
+
+
+const arr1 = [[1, 2], [3, 4]];
+const arr2 = structuredClone(arr1);  
+arr2[0][0] = 6;
+
+console.log(arr1);  
+console.log(arr2);
+ 
