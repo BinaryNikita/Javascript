@@ -7,6 +7,7 @@ function copyData(origin, destination){
           console.log("Error while reading");
         } else {
     
+          console.log("Written succesfully");
           fs.writeFile(destination, data, (err) => {
             if(err){
                console.log("Error while writing")
@@ -21,3 +22,5 @@ function copyData(origin, destination){
 
 
 copyData("node/File_Reading/file1.txt", "node/File_Reading/file3.txt");
+
+console.log("HELLO");
