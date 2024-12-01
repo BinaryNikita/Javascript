@@ -43,4 +43,8 @@ let userDetails = {
     }
 }
 
-userDetails.greet()
+userDetails.greet();
+
+global.namea = "Nikita";
+
+ // Outputs: Hello, World!

@@ -29,4 +29,11 @@ console.table(persons);
 // });
 
 
+global.myGlobalVar = "Hello, World!";
+console.log(myGlobalVar); // Outputs: Hello, World!
+
+
+
+module.exports = global.myGlobalVar; // Export the value
+
 
