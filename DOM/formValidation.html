@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="form.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <form class="signup-form">
+        <h2>Sign Up</h2>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Enter your username"
+            required
+          />
+          <span id="name-error" style="display: none"></span>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+          <span id="email-error" style="display: none"></span>
+        </div>
+        <div class="form-group">
+          <label for="contact">Contact Number</label>
+          <input
+            type="number"
+            id="contact"
+            name="contact"
+            placeholder="Enter your contact number"
+            required
+          />
+          <span id="contact-error" style="display: none"></span>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+          />
+          <span id="password-error" style="display: none"></span>
+        </div>
+        <button onclick="validateForm(event)" type="submit" class="btn">
+          Sign Up
+        </button>
+      </form>
+    </div>
+
+    <script>
+      function validateForm(event) {
+        event.preventDefault();
+
+        const form = document.querySelector('.signup-form');
+        const formData = new FormData(form);
+
+        const username = formData.get('username');
+        const email = formData.get('email');
+        const contact = formData.get('contact');
+        const password = formData.get('password');
+
+        let count = 0;
+        for (let i = 0; i < username.length; i++) {
+          let ch = username.charAt(i);
+          if (
+            (ch.charCodeAt(0) >= 65 && ch.charCodeAt(0) <= 90) ||
+            (ch.charCodeAt(0) >= 97 && ch.charCodeAt(0) <= 122)
+          ) {
+            count++;
+          }
+        }
+        if (count !== username.length) {
+          let error = document.getElementById('name-error');
+          error.style.display = 'block';
+          error.innerText = 'username should contains alphabets only';
+        }
+
+        count = 0;
+
+        let email_regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        if (!email_regex.test(email)) {
+          let emailerror = document.getElementById('email-error');
+          emailerror.style.display = 'block';
+          emailerror.innerText =
+            'Please enter a valid email eg. example@gmail.com';
+        }
+
+        let pass_regex =
+          /(?=^.{8,}$)(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[#?!]).*$/;
+
+        if (!pass_regex.test(password)) {
+          let passerror = document.getElementById('password-error');
+          passerror.style.display = 'block';
+          passerror.innerText = `Password must contain at least 8 characters,
+including at least one number,
+one uppercase letter,
+one lowercase letter,
+and at least one special character (#, ?, !).
+It cannot be your old password.`;
+        }
+      }
+    </script>
+  </body>
+</html>

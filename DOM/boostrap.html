@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body style="margin: 0; padding: 0">
+    <div class="container-fluid" id="main"></div>
+
+    <script>
+      let mainDiv = document.getElementById('main');
+
+      function navbar() {
+        let nav = document.createElement('nav');
+        mainDiv.appendChild(nav);
+        mainDiv.style.backgroundColor = 'black';
+        mainDiv.style.margin = '0';
+        mainDiv.style.padding = '0';
+        nav.classList.add(
+          'navbar',
+          'navbar-expand-lg',
+          'navbar-light',
+          'bg-light'
+        );
+
+        let logo = document.createElement('a');
+        logo.classList.add('navbar-brand');
+        logo.innerText = 'Logo';
+        nav.appendChild(logo);
+
+        let input = document.createElement('input');
+        input.setAttribute('placeholder', 'Search something...');
+        input.style.margin = '0 30%';
+        nav.appendChild(input);
+
+        let btn1 = document.createElement('button');
+        btn1.classList.add('btn', 'btn-primary', 'mr-2');
+        btn1.innerText = 'Sign in';
+        btn1.onclick = signIn;
+        nav.appendChild(btn1);
+
+        let btn2 = document.createElement('button');
+        btn2.classList.add('btn', 'btn-success');
+        btn2.innerText = 'Sign up';
+        nav.appendChild(btn2);
+      }
+      navbar();
+
+      function cards() {
+        let card = document.createElement('div');
+        mainDiv.appendChild(card);
+        card.classList.add('card', 'mt-5');
+        card.style.width = '18rem';
+
+        let img = document.createElement('img');
+        img.classList.add('card-img-top');
+        img.src = 'flower.jpeg';
+        card.appendChild(img);
+
+        let cardBody = document.createElement('div');
+        card.appendChild(cardBody);
+        cardBody.classList.add('card-body');
+
+        let h5 = document.createElement('h5');
+        h5.classList.add('card-title');
+        h5.innerText = 'Heading';
+        cardBody.appendChild(h5);
+
+        let p = document.createElement('p');
+        p.classList.add('card-text');
+        p.innerText = 'This is a description';
+
+        cardBody.appendChild(p);
+
+        let cardElement = card;
+      }
+
+      cards();
+
+      function footer() {
+        let footer = document.createElement('div');
+        mainDiv.appendChild(footer);
+        footer.classList.add(
+          'footer',
+          'bg-light',
+          'mt-5',
+          'p-3',
+          'd-flex',
+          'justify-content-center',
+          'align-items-center',
+          'fixed-bottom'
+        );
+
+        let footerPara = document.createElement('p');
+        footerPara.classList.add('text-center', 'mb-0');
+        footerPara.innerText = 'Footer content';
+        footer.appendChild(footerPara);
+      }
+
+      footer();
+
+      function signIn(){
+
+        let card = document.querySelector('.card');
+        if (card) {
+          card.remove(); 
+        }
+
+        mainDiv.style.backgroundColor = 'white';
+
+        let form = document.createElement('form');
+        mainDiv.appendChild(form);
+        
+        let input1 = document.createElement('input');
+        input1.placeholder = "enter your email";
+        input1.type = 'email';
+        form.appendChild(input1);
+
+
+        let input2 = document.createElement('input');
+        input2.placeholder = "enter your password";
+        input2.type = 'password';
+        form.appendChild(input2);
+
+      }
+
+    </script>
+  </body>
+</html>

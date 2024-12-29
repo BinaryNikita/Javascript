@@ -17,7 +17,7 @@ function todo(){
         let index = task.indexOf(taskName.toLowerCase());  
         if (index !== -1) {
             task.splice(index, 1); 
-            alert(taskName + " deleted succussfully.")
+            alert(taskName + " deleted successfully.")
         } else {
             alert(taskName + " does not exist")
         }

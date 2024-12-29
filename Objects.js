@@ -48,3 +48,15 @@ userDetails.greet();
 global.namea = "Nikita";
 
  // Outputs: Hello, World!
+ for(let i = 1; i <= 5; i++ ){
+    let s =' ', k = 1;
+    for(let j = 1; j <= 5 - 1; j++){
+        s += ' ';
+    }
+    
+    for(let j = 1; j <= i; j++){
+        s += k + ' ';
+        k = Math.floor(k * (i- j )/5);
+    }
+    console.log(s);
+}

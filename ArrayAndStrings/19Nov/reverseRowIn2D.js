@@ -11,7 +11,6 @@ for(let i = 0; i < a.length; i++){
     let j = 0;
 
     while(j < m){
-
         let temp = a[i][m];
         a[i][m] = a[i][j];
         a[i][j] = temp;
